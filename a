@@ -1,0 +1,15 @@
+
+#!/bin/bash
+pushd /Users/mac/Desktop/works/WS/FM_2
+
+git add .
+
+git commit -m "m periodical commit"
+
+git push origin master
+
+#git status
+
+#ls -al
+popd
+
