@@ -1,5 +1,11 @@
 
 #!/bin/bash
+
+#################################
+
+	# FM_2
+
+#################################
 pushd /Users/mac/Desktop/works/WS/FM_2
 
 git add .
@@ -13,3 +19,13 @@ git push origin master
 #ls -al
 popd
 
+#################################
+
+	# works
+
+#################################
+pushd /Users/mac/Desktop/works
+
+git add .
+git commit -m "m periodical commit"
+git push origin master
