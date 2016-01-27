@@ -29,3 +29,10 @@ pushd /Users/mac/Desktop/works
 git add .
 git commit -m "m periodical commit"
 git push origin master
+
+#################################
+
+	# exit
+
+#################################
+exit
