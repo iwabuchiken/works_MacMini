@@ -1,0 +1,18 @@
+#!/bin/bash
+
+pushd /Users/mac/Desktop/works/WS/xcode
+
+# gitk
+gitk &
+
+# xcode
+/Applications/Xcode.app/Contents/MacOS/Xcode &
+
+# eclipse
+/Users/mac/eclipse/java-mars/Eclipse.app/Contents/MacOS/eclipse &
+
+# open terminal
+#ref http://stackoverflow.com/questions/7171725/open-new-terminal-tab-from-command-line-mac-os-x answered Aug 24 '11 at 15:15
+osascript -e 'tell application "Terminal" to activate' -e 'tell application "System Events" to tell process "Terminal" to keystroke "t" using command down' -e 'tell application "Terminal" to do script "pushd /Users/mac/Desktop/works/WS/xcode" in selected tab of the front window' &
+
+#exit
