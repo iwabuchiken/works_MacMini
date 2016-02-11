@@ -6,7 +6,8 @@ pushd /Users/mac/Desktop/works/WS/Cake_IFM11
 /Users/mac/eclipse/java-mars/Eclipse.app/Contents/MacOS/eclipse &
 
 # FileZilla
-/Applications/FileZilla.app/Contents/MacOS/filezilla &
+#/Applications/FileZilla.app/Contents/MacOS/filezilla &
+/Users/mac/Documents/FileZilla.app/Contents/MacOS/filezilla &
 
 # MAMP
 /Applications/MAMP/MAMP.app/Contents/MacOS/MAMP &
