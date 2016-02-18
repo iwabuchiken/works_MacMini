@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo “changing directory…”
+
+#cd /Users/mac/Desktop/works	#=> n.w
+#cd “/Users/mac/Desktop/works”	#=> “cd: “/Users/mac/Desktop/works”: No such file or directory”
+
+#function cd_to_works() {
+
+#	echo “yes”
+
+#	cd “/Users/mac”
+#	cd “\/Users\/mac”
+#}
+
+cd /Users/mac
+
+cd “\/Users\/mac”
+
+#cd_to_works

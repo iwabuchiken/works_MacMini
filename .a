@@ -1,0 +1,17 @@
+#!/bin/bash
+# <Usage>
+# >. .a
+#	=> “.” char needed before “.a”
+
+
+echo “changing directory…”
+
+#cd “\/Users\/mac”	#=> cd: “/Users/mac”: No such file or directory
+
+#`cd ~`	#=> no effect
+
+#$( cd “/Users” )	#=> cd: “/Users”: No such file or directory
+
+#$( cd /Users ) #=> no effect
+
+cd /Users/mac/Desktop/works/
