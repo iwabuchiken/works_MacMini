@@ -6,4 +6,4 @@ DIR="$( pwd )"
 
 echo DIR = $DIR
 
-#$DIR/d.bat
+$DIR/d.bat

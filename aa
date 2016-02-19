@@ -1,0 +1,88 @@
+#!/bin/bash
+
+function test_1() {
+
+	echo "========== executing function => ${FUNCNAME}"
+	
+	array=(
+    'hello::world.'
+    'nice::to meet you'
+	)
+
+	echo ${array[@]}
+
+	for index in "${array[@]}" ; do
+	    KEY="${index%%::*}"
+	    VALUE="${index##*::}"
+	    echo "$KEY - $VALUE"
+	done
+
+}
+
+function test_2() {
+
+	echo "========== executing function => ${FUNCNAME}"
+	
+	#ref http://stackoverflow.com/questions/6047648/bash-4-associative-arrays-error-declare-a-invalid-option answered Aug 1 '13 at 11:06
+	str="dict::ionary"
+	
+	echo "${str%%*::}"	#=> dict::ionary
+	echo "${str%%::*}"	#=> dict
+	echo "${str##*::}"	#=> ionary
+
+}
+
+function test_3() {
+
+	echo "========== executing function => ${FUNCNAME}"
+	
+	#ref http://stackoverflow.com/questions/6047648/bash-4-associative-arrays-error-declare-a-invalid-option answered May 18 '11 at 16:18
+	arr=( '10' '20' '30'  )
+
+	echo ${arr[@]}	#=> '10 20 30'
+
+	echo ${arr[0]}
+	
+#	echo ${arr[#]}
+
+	#ref http://www.cyberciti.biz/faq/finding-bash-shell-array-length-elements/
+	echo ${#arr[@]}	#=> 3
+	
+}
+
+test_1
+test_2
+test_3
+
+if [ “$1” == “abc” ]
+
+then
+	echo “yes, abc”
+
+#elsie [ “$1” == “” ]
+#elsie [ $1 == “” ]
+
+#ref http://www.cyberciti.biz/faq/unix-linux-bash-script-check-if-variable-is-empty/
+#elsie [ -z “$1” ]	#=> no effect
+#elsie [[ -z “$1” ]]	#=> no effect
+#elsie [[ -z $1 ]]	#=> no effect
+#elsie [ -z $1 ]	#=> no effect
+#elsie [[ -z $1 ]]	#=> no effect
+#elsif [[ -z $1 ]]
+#elif [[ -z $1 ]]	#=> w.
+elif [[ -z $1 ]];
+
+then
+	echo “yes, blank”
+else
+	echo “NO, abc”
+fi
+
+echo \$1 = “$1”
+
+echo “length is $#”
+
+#input="Foo bar"
+#echo ${input?Error \$input is not defined.}	#=> ‘input: Error $input is not defined.’
+#unset input
+#echo ${input?Error \$input is not defined.}
