@@ -1,0 +1,16 @@
+#!/bin/bash
+
+pushd /Users/mac/Desktop/works/WS/WS_Music
+
+# gitk
+gitk &
+
+# mscore
+/Applications/MuseScore 2.app/Contents/MacOS/mscore &
+
+
+# open terminal
+#ref http://stackoverflow.com/questions/7171725/open-new-terminal-tab-from-command-line-mac-os-x answered Aug 24 '11 at 15:15
+osascript -e 'tell application "Terminal" to activate' -e 'tell application "System Events" to tell process "Terminal" to keystroke "t" using command down' -e 'tell application "Terminal" to do script "pushd /Users/mac/Desktop/works/WS/WS_Music" in selected tab of the front window' &
+
+#exit
