@@ -1,5 +1,37 @@
 #!/bin/bash
 
+function test_4() {
+
+if [ “$1” == “abc” ]
+
+then
+	echo “yes, abc”
+
+#elsie [ “$1” == “” ]
+#elsie [ $1 == “” ]
+
+#ref http://www.cyberciti.biz/faq/unix-linux-bash-script-check-if-variable-is-empty/
+#elsie [ -z “$1” ]	#=> no effect
+#elsie [[ -z “$1” ]]	#=> no effect
+#elsie [[ -z $1 ]]	#=> no effect
+#elsie [ -z $1 ]	#=> no effect
+#elsie [[ -z $1 ]]	#=> no effect
+#elsif [[ -z $1 ]]
+#elif [[ -z $1 ]]	#=> w.
+elif [[ -z $1 ]];
+
+then
+	echo “yes, blank”
+else
+	echo “NO, abc”
+fi
+
+echo \$1 = “$1”
+
+echo “length is $#”
+
+}
+
 function test_1() {
 
 	echo "========== executing function => ${FUNCNAME}"
@@ -50,37 +82,24 @@ function test_3() {
 	
 }
 
-test_1
-test_2
-test_3
+function test_5() {
 
-if [ “$1” == “abc” ]
+<<COMMENT1
+    your comment 1
+    comment 2
+    blah
+COMMENT1
 
-then
-	echo “yes, abc”
+	echo "test_5"
 
-#elsie [ “$1” == “” ]
-#elsie [ $1 == “” ]
+}
 
-#ref http://www.cyberciti.biz/faq/unix-linux-bash-script-check-if-variable-is-empty/
-#elsie [ -z “$1” ]	#=> no effect
-#elsie [[ -z “$1” ]]	#=> no effect
-#elsie [[ -z $1 ]]	#=> no effect
-#elsie [ -z $1 ]	#=> no effect
-#elsie [[ -z $1 ]]	#=> no effect
-#elsif [[ -z $1 ]]
-#elif [[ -z $1 ]]	#=> w.
-elif [[ -z $1 ]];
+#test_1
+#test_2
+#test_3
+#test_4
+test_5
 
-then
-	echo “yes, blank”
-else
-	echo “NO, abc”
-fi
-
-echo \$1 = “$1”
-
-echo “length is $#”
 
 #input="Foo bar"
 #echo ${input?Error \$input is not defined.}	#=> ‘input: Error $input is not defined.’
