@@ -47,6 +47,10 @@ function change_dir() {
 		echo "changing to WS_E2"
 		cd /Users/mac/Desktop/works/WS/WS_E2
 		
+	elif [ $1 == "c" ]; then
+		echo "changing to Cake_IFM11"
+		cd /Users/mac/Desktop/works/WS/Cake_IFM11
+		
 	fi
 			
 #	cd /Users/mac/Desktop/works/
@@ -88,6 +92,8 @@ elif [ $1 == "x" ]; then change_dir x
 elif [ $1 == "w" ]; then change_dir w
 elif [ $1 == "f" ]; then change_dir f
 elif [ $1 == "e" ]; then change_dir e
+
+elif [ $1 == "c" ]; then change_dir c
 
 else
 	change_dir
