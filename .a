@@ -1,4 +1,19 @@
 #!/bin/bash
+
+####################################
+#	To add an option
+#	1. in the function 'main'
+#		=> add 'elif [ $1 == "e" ]; then change_dir e'
+#	2. function 'change_dir'
+#		=> 	elif [ $1 == "w" ]; then
+#	
+#		echo "changing to works"
+#		cd /Users/mac/Desktop/works/
+#	3. function 'show_usage'
+#		=> 'echo "'. .a w'	=> cd to /Users/mac/Desktop/works"'
+#
+####################################
+
 # <Usage>
 # >. .a
 #	=> “.” char needed before “.a”
@@ -51,6 +66,10 @@ function change_dir() {
 		echo "changing to Cake_IFM11"
 		cd /Users/mac/Desktop/works/WS/Cake_IFM11
 		
+	elif [ $1 == "m" ]; then
+		echo "changing to WS_Music"
+		cd /Users/mac/Desktop/works/WS/WS_Music
+
 	fi
 			
 #	cd /Users/mac/Desktop/works/
@@ -68,6 +87,7 @@ function show_usage() {
 	echo "'. .a f'	=> cd to /Users/mac/Desktop/works/WS/FM_2"
 	echo "'. .a e'	=> cd to /Users/mac/Desktop/works/WS/WS_E2"
 	echo "'. .a w'	=> cd to /Users/mac/Desktop/works"
+	echo "'. .a m'	=> cd to /Users/mac/Desktop/works/WS/WS_Music"
 	echo "'. .a'		=> cd to /Users/mac/Desktop/works"
 	echo "'. .a h'	=> show help text (this)"
 	
@@ -76,6 +96,12 @@ function show_usage() {
 ####################################
 #	“-help” => show usage
 ####################################
+
+####################################
+#	main
+####################################
+#function main() {
+
 if [ $# == 0 ];
 then
 	echo “no param” && show_usage
@@ -95,9 +121,25 @@ elif [ $1 == "e" ]; then change_dir e
 
 elif [ $1 == "c" ]; then change_dir c
 
+elif [ $1 == "m" ]; then change_dir m
+
 else
 	change_dir
 fi
+
+#}
+
+####################################
+#	execution
+####################################
+#main
+param=$1
+
+echo "param is $param"
+
+#main param
+
+
 
 ####################################
 #	change dir
