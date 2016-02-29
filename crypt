@@ -1,0 +1,55 @@
+#!/usr/bin/ruby
+
+#ref http://stackoverflow.com/questions/4128939/simple-encryption-in-ruby-without-external-gems answered Nov 8 '10 at 23:53
+require 'openssl'
+require 'digest/sha1'
+
+def crypt
+
+#	puts "file is => #{__FILE__}"
+	
+	# create the cipher for encrypting
+	cipher = OpenSSL::Cipher::Cipher.new("aes-256-cbc")
+	cipher.encrypt
+	
+	puts "cipher => #{cipher.to_s}"
+	
+	# you will need to store these for later, in order to decrypt your data
+	key = Digest::SHA1.hexdigest("yourpass")
+	iv = cipher.random_iv
+	
+	# load them into the cipher
+	cipher.key = key
+	cipher.iv = iv
+	
+	# encrypt the message
+	message = "This is a secure message, meet at the clock-tower at dawn."
+
+#	encrypted = cipher.update('This is a secure message, meet at the clock-tower at dawn.')
+	encrypted = cipher.update("#{message}")
+
+	encrypted << cipher.final
+
+	puts "encrypted: #{encrypted}\n"
+	
+	# now we create a sipher for decrypting
+	cipher = OpenSSL::Cipher::Cipher.new("aes-256-cbc")
+	cipher.decrypt
+	cipher.key = key
+	cipher.iv = iv
+	
+	# and decrypt it
+	decrypted = cipher.update(encrypted)
+	decrypted << cipher.final
+	puts "decrypted: #{decrypted}\n"
+
+end 
+
+
+def exec
+
+	crypt
+	
+end
+
+exec
