@@ -1,0 +1,163 @@
+#!/bin/bash
+
+####################################
+#	To add an option
+#	1. in the function 'main'
+#		=> add 'elif [ $1 == "e" ]; then change_dir e'
+#	2. function 'change_dir'
+#		=> 	elif [ $1 == "w" ]; then
+#	
+#		echo "changing to works"
+#		cd /Users/mac/Desktop/works/
+#	3. function 'show_usage'
+#		=> 'echo "'. .a w'	=> cd to /Users/mac/Desktop/works"'
+#
+####################################
+
+# <Usage>
+# >. .a
+#	=> “.” char needed before “.a”
+
+#ref $# http://stackoverflow.com/questions/4341630/checking-for-the-correct-number-of-arguments answered Dec 3 '10 at 1:16
+#echo “num of params —— $#”
+
+
+####################################
+#	funcs
+####################################
+function change_dir() {
+
+	echo “changing directory…”
+	
+	#cd “\/Users\/mac”	#=> cd: “/Users/mac”: No such file or directory
+	
+	#`cd ~`	#=> no effect
+	
+	#$( cd “/Users” )	#=> cd: “/Users”: No such file or directory
+	
+	#$( cd /Users ) #=> no effect
+
+#	if [ $# == 0 ] && cd /Users/mac/Desktop/works/	#=> syntax error near unexpected token `elif'
+	if [ $# == 0 ]; then cd /Users/mac/Desktop/works/
+	
+#	then cd /Users/mac/Desktop/works/
+#	
+#		cd /Users/mac/Desktop/works/
+		
+	#ref elif http://www.thegeekstuff.com/2010/06/bash-if-statement-examples/
+	elif [ $1 == "w" ]; then
+	
+		echo "changing to works"
+		cd /Users/mac/Desktop/works/
+		
+	elif [ $1 == "x" ]; then
+		echo "changing to xcode"
+		cd /Users/mac/Desktop/works/WS/xcode
+		
+	elif [ $1 == "f" ]; then
+		echo "changing to FM_2"
+		cd /Users/mac/Desktop/works/WS/FM_2
+		
+	elif [ $1 == "e" ]; then
+		echo "changing to WS_E2"
+		cd /Users/mac/Desktop/works/WS/WS_E2
+		
+	elif [ $1 == "c" ]; then
+		echo "changing to Cake_IFM11"
+		cd /Users/mac/Desktop/works/WS/Cake_IFM11
+		
+	elif [ $1 == "m" ]; then
+		echo "changing to WS_Music"
+		cd /Users/mac/Desktop/works/WS/WS_Music
+
+	fi
+			
+#	cd /Users/mac/Desktop/works/
+
+}
+
+function show_usage() {
+	#ref http://www.cyberciti.biz/faq/unix-linux-bash-function-number-of-arguments-passed/
+	echo ${FUNCNAME}
+
+	echo "params --> '$@'"
+
+	echo "examples"
+	echo "'. .a x'	=> cd to /Users/mac/Desktop/works/WS/xcode"
+	echo "'. .a f'	=> cd to /Users/mac/Desktop/works/WS/FM_2"
+	echo "'. .a e'	=> cd to /Users/mac/Desktop/works/WS/WS_E2"
+	echo "'. .a w'	=> cd to /Users/mac/Desktop/works"
+	echo "'. .a m'	=> cd to /Users/mac/Desktop/works/WS/WS_Music"
+	echo "'. .a'		=> cd to /Users/mac/Desktop/works"
+	echo "'. .a h'	=> show help text (this)"
+	
+}
+
+####################################
+#	“-help” => show usage
+####################################
+
+####################################
+#	main
+####################################
+#function main() {
+
+if [ $# == 0 ];
+then
+	echo “no param” && show_usage
+	
+#	exit 1
+#	exit 0
+#ref goto http://stackoverflow.com/questions/8680065/how-do-you-goto-in-mac-shell-like-a-in-windows-bat
+#	goto exit
+
+#elif [ $1 == "-h" ]; then show_usage
+elif [ $1 == "h" ]; then show_usage
+
+elif [ $1 == "x" ]; then change_dir x
+elif [ $1 == "w" ]; then change_dir w
+elif [ $1 == "f" ]; then change_dir f
+elif [ $1 == "e" ]; then change_dir e
+
+elif [ $1 == "c" ]; then change_dir c
+
+elif [ $1 == "m" ]; then change_dir m
+
+else
+	change_dir
+fi
+
+#}
+
+####################################
+#	execution
+####################################
+#main
+param=$1
+
+echo "param is $param"
+
+#main param
+
+
+
+####################################
+#	change dir
+####################################
+
+#echo “changing directory…”
+#
+##cd “\/Users\/mac”	#=> cd: “/Users/mac”: No such file or directory
+#
+##`cd ~`	#=> no effect
+#
+##$( cd “/Users” )	#=> cd: “/Users”: No such file or directory
+#
+##$( cd /Users ) #=> no effect
+#
+#cd /Users/mac/Desktop/works/
+#
+#:exit
+
+
+

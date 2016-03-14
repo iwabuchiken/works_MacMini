@@ -1,0 +1,55 @@
+
+#!/bin/bash
+
+#################################
+
+	# FM_2
+
+#################################
+pushd /Users/mac/Desktop/works/WS/FM_2
+
+git add .
+
+git commit -m "m switching to —> windows"
+
+git push origin master
+
+#git status
+
+#ls -al
+popd
+
+#################################
+
+	# WS_E2
+
+#################################
+pushd /Users/mac/Desktop/works/WS/WS_E2
+
+git add .
+git commit -m "m switching to —> windows"
+git push origin master
+
+#################################
+
+	# exit
+
+#################################
+exit
+
+#################################
+
+	# storage
+
+#################################
+#ref comment http://www.cyberciti.biz/faq/bash-comment-out-multiple-line-code/
+<<STORAGE
+#ref https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases
+#ref http://qiita.com/peccul/items/90dd469e2f72babbc106
+git config --global alias.co checkout
+git config --global alias.c commit
+git config --global alias.s status
+git config --global alias.l log
+git config --global alias.a add
+
+STORAGE
