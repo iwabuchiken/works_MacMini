@@ -6,6 +6,7 @@
 	# FM_2
 
 #################################
+echo pushd /Users/mac/Desktop/works/WS/FM_2
 pushd /Users/mac/Desktop/works/WS/FM_2
 
 git add .
@@ -13,6 +14,8 @@ git add .
 git commit -m "m switching to —> windows"
 
 git push origin master
+
+echo FM_2 done
 
 #git status
 
@@ -24,11 +27,29 @@ popd
 	# WS_E2
 
 #################################
+echo pushd /Users/mac/Desktop/works/WS/WS_E2
 pushd /Users/mac/Desktop/works/WS/WS_E2
 
 git add .
 git commit -m "m switching to —> windows"
 git push origin master
+
+echo WS_E2 done
+
+#################################
+
+	# works
+
+#################################
+echo pushd /Users/mac/Desktop/works
+
+pushd /Users/mac/Desktop/works
+
+git add .
+git commit -m "m switching to —> windows"
+git push origin master
+
+echo works done
 
 #################################
 
