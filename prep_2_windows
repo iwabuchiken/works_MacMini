@@ -6,7 +6,7 @@
 	# FM_2
 
 #################################
-echo pushd /Users/mac/Desktop/works/WS/FM_2
+echo ******** pushd /Users/mac/Desktop/works/WS/FM_2 *************
 pushd /Users/mac/Desktop/works/WS/FM_2
 
 git add .
@@ -27,7 +27,7 @@ popd
 	# WS_E2
 
 #################################
-echo pushd /Users/mac/Desktop/works/WS/WS_E2
+echo ************* pushd /Users/mac/Desktop/works/WS/WS_E2 *************
 pushd /Users/mac/Desktop/works/WS/WS_E2
 
 git add .
@@ -41,7 +41,7 @@ echo WS_E2 done
 	# works
 
 #################################
-echo pushd /Users/mac/Desktop/works
+echo ************* pushd /Users/mac/Desktop/works *************
 
 pushd /Users/mac/Desktop/works
 
