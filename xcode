@@ -9,7 +9,7 @@ gitk &
 /Applications/Xcode.app/Contents/MacOS/Xcode &
 
 # eclipse
-/Users/mac/eclipse/java-mars/Eclipse.app/Contents/MacOS/eclipse &
+#/Users/mac/eclipse/java-mars/Eclipse.app/Contents/MacOS/eclipse &
 
 # open terminal
 #ref http://stackoverflow.com/questions/7171725/open-new-terminal-tab-from-command-line-mac-os-x answered Aug 24 '11 at 15:15
